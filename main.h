@@ -5,7 +5,6 @@
 extern "C" {
 #endif
 	
-int getDigit(char, int*);
 int main(void);
 void analysiereZeichen(char);
 

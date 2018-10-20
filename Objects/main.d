@@ -14,4 +14,3 @@
 .\objects\main.o: input.h
 .\objects\main.o: output.h
 .\objects\main.o: rpn.h
-.\objects\main.o: main.h

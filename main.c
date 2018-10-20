@@ -1,4 +1,3 @@
-
 /**
   * @brief  Main program
   * @param  None
@@ -12,43 +11,21 @@
 #include "input.h"
 #include "output.h"
 #include "rpn.h"
-#include "main.h"
 
 /* Funktionsdeklarationen */
-int getDigit(char c, int* value);
 int main(void);
 void analysiereZeichen(char zeichen);
 
 /**
-  * @brief  Konvertiert das uebergebe Zeichen in einen Ganzzahlwert
-  *
-  * @param  c Das zu konvertierende Zeichen  *
-  * @param  value Beinhaltet bei erfolgreicher Konvertierung die vom Zeichen dargestellte Zahl
-  *
-  * @return Fehlercode; 0 wenn Zeichen erfolgreich konvertiert werden konnte, ansonsten -1
-  */
-int getDigit(char c, int* value) {
-  if (c < '0' || c > '9') {
-    // Es handelt sich um keine Ziffer
-    return -1;
-  }
-
-  // Berechnung des Versatzes zwischen dem Ziffern-Zeichen 'c' und des Null-Ziffern-Zeichens.
-  *value = c - '0';
-  return 0;
-}
-
-/**
   * @brief  Main program;
   *         Liest wiederholt ein Zeichen vom TFT-Touch-KeyPad ein.
-  *         Handelte es sich um eine Ziffer, dann wird diese zu einer 
-  *         laufenden Summe addiert und ausgegeben.
   */
 int main(void) {
   // Initialisierung
   Init_TI_Board();  
-  Make_Touch_Pad();  
-  char zeichen = 0;
+  Make_Touch_Pad();
+	
+  char zeichen;
 	
 	while(1) // super loop
 	{
@@ -57,10 +34,13 @@ int main(void) {
 	}
 }
 
+/**
+  * @brief Analysiert das eingelesene Zeichen.
+  */
 void analysiereZeichen(char zeichen)
 {
-	static int zahl;
-	char outputString[12];
+	// static int zahl;
+	static char letzteEingabe;
 	
 	switch(zeichen)
 	{
@@ -73,31 +53,48 @@ void analysiereZeichen(char zeichen)
 		case '6':
 		case '7':
 		case '8':
-		case '9': zahl = zifferHinzufuegen(zahl, zeichen);
+		case '9': /* Wenn die letzte Eingabe eine Zahl war, wird die Ziffer zur Zahl
+			        hinzugefügt und dann auf den Stack gelegt. */
+							if ((letzteEingabe >= '0') && (letzteEingabe <= '9'))
+							{
+								int zahl = zifferHinzufuegen(pop(), zeichen);
+								push(zahl);
+							}
+							else
+							{
+								push(zeichen - '0');
+							}
 							break;
-		case ' ': push(zahl); // Zahl ist vorbei
-							zahl = 0;
+		case ' ': 
+							break;
+		case '+': add();
+							break;
+		case '-': sub();
+							break;
+		case '*': mul();
+							break;
+		case '/': div();
+							break;
+		case 'p': // druckt den obersten Wert des Stacks aus
 							TFT_cls();
-							break;
-		case '+':
-		case '-':
-		case '*':
-		case '/': berechne(zeichen);
-							break;
-		case 'p': sprintf(outputString, "%d", pop());
-							TFT_cls();
-							TFT_puts(outputString);
+							tftAusgabeZahl(getObersterEintrag());
 							break;
 		case 'f': // druckt den gesamten Stack aus
-								break;
+							TFT_cls();
+							tftAusgabeZahlen(getAlleEintraege(), getAnzahlEintraege());
+							break;
 		case 'c': // löscht alle Einträge des Stacks
-								break;
+							clearStack();
+							break;
 		case 'd': // dupliziert den obersten Eintrag
-								break;
-		case 'r': // vertauscht die Reihenfolge der beiden obersten Einträge des Stacks
-								break;
-	}	
+							dupliziereOberstenEintrag();
+							break;
+		case 'r': // vertauscht die Reihenfolge der beiden oberen Einträge des Stacks
+							vertauscheEintraege();
+							break;	
+	}
+	
+	letzteEingabe = zeichen;
 }
  
-// EOF
 // EOF

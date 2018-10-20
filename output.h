@@ -5,7 +5,8 @@
 extern "C" {
 #endif
 	
-
+void tftAusgabeZahl(int);
+void tftAusgabeZahlen(int*, int);
 
 #ifdef	__cplusplus
 }
