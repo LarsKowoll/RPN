@@ -13,3 +13,4 @@
 .\objects\main.o: stack.h
 .\objects\main.o: input.h
 .\objects\main.o: rpn.h
+.\objects\main.o: main.h

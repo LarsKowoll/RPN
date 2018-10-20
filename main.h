@@ -7,6 +7,7 @@ extern "C" {
 	
 int getDigit(char, int*);
 int main(void);
+void analysiereZeichen(char);
 
 #ifdef	__cplusplus
 }

@@ -11,6 +11,12 @@
 #include "stack.h"
 #include "input.h"
 #include "rpn.h"
+#include "main.h"
+
+/* Funktionsdeklarationen */
+int getDigit(char c, int* value);
+int main(void);
+void analysiereZeichen(char zeichen);
 
 /**
   * @brief  Konvertiert das uebergebe Zeichen in einen Ganzzahlwert
@@ -43,11 +49,16 @@ int main(void) {
   Make_Touch_Pad();  
   char zeichen = 0;
 	
-while(1) // super loop
+	while(1) // super loop
+	{
+		zeichen = zeichenEinlesen();
+		analysiereZeichen(zeichen);
+	}
+}
+
+void analysiereZeichen(char zeichen)
 {
 	static int zahl;
-	zeichen = zeichenEinlesen();
-	
 	char outputString[12];
 	
 	switch(zeichen)
@@ -63,24 +74,29 @@ while(1) // super loop
 		case '8':
 		case '9': zahl = zifferHinzufuegen(zahl, zeichen);
 							break;
-		case ' ': push(zahl);
+		case ' ': push(zahl); // Zahl ist vorbei
 							zahl = 0;
 							TFT_cls();
 							break;
-		case 'p': 
-							sprintf(outputString, "%d", pop());
+		case '+':
+		case '-':
+		case '*':
+		case '/': berechne(zeichen);
+							break;
+		case 'p': sprintf(outputString, "%d", pop());
 							TFT_cls();
 							TFT_puts(outputString);
 							break;
-	}
-	
-	// berechne(zeichen);
+		case 'f': // druckt den gesamten Stack aus
+								break;
+		case 'c': // löscht alle Einträge des Stacks
+								break;
+		case 'd': // dupliziert den obersten Eintrag
+								break;
+		case 'r': // vertauscht die Reihenfolge der beiden obersten Einträge des Stacks
+								break;
+	}	
 }
-		
-	
-
-
  
-}
 // EOF
 // EOF

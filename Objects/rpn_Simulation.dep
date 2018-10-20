@@ -107,7 +107,7 @@ F (.\TI_BRD_LIB\Simulation\oneWireSTIM.ini)(0x5BCB055A)()
 F (.\TI_BRD_LIB\Simulation\rotarySIM.ini)(0x5BCB055A)()
 F (.\TI_BRD_LIB\Simulation\timer2SIM.ini)(0x5BCB055A)()
 F (.\TI_BRD_LIB\Simulation\userSIM.ini)(0x5BCB055A)()
-F (.\main.c)(0x5BCB33F4)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\TI_BRD_LIB\Library -I .\TI_BRD_LIB\Simulated_Board-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\Inc\ST\STM32F10x-D__UVISION_VERSION="523" -DSIMULATION -DSTM32F10X_HD-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\main.c)(0x5BCB6301)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\TI_BRD_LIB\Library -I .\TI_BRD_LIB\Simulated_Board-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\Inc\ST\STM32F10x-D__UVISION_VERSION="523" -DSIMULATION -DSTM32F10X_HD-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F65B18)
 I (.\TI_BRD_LIB\Library\TI_Lib.h)(0x5BCB055A)
 I (.\TI_BRD_LIB\Library\TI_memory_map.h)(0x5BCB055A)
@@ -122,7 +122,8 @@ I (.\TI_BRD_LIB\Library\keypad.h)(0x5BCB055A)
 I (stack.h)(0x5BCB302F)
 I (input.h)(0x5BCB3279)
 I (rpn.h)(0x5BCB302D)
-F (.\stack.c)(0x5BCB055A)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\TI_BRD_LIB\Library -I .\TI_BRD_LIB\Simulated_Board-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\Inc\ST\STM32F10x-D__UVISION_VERSION="523" -DSIMULATION -DSTM32F10X_HD-o .\objects\stack.o --omf_browse .\objects\stack.crf --depend .\objects\stack.d)
+I (main.h)(0x5BCB625F)
+F (.\stack.c)(0x5BCB3453)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\TI_BRD_LIB\Library -I .\TI_BRD_LIB\Simulated_Board-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\Inc\ST\STM32F10x-D__UVISION_VERSION="523" -DSIMULATION -DSTM32F10X_HD-o .\objects\stack.o --omf_browse .\objects\stack.crf --depend .\objects\stack.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F65B18)
 I (.\TI_BRD_LIB\Library\TI_Lib.h)(0x5BCB055A)
 I (.\TI_BRD_LIB\Library\TI_memory_map.h)(0x5BCB055A)
@@ -134,7 +135,7 @@ I (C:\Keil_v5\ARM\CMSIS\Include\core_cmFunc.h)(0x559D31EA)
 I (C:\Keil_v5\ARM\Inc\ST\STM32F10x\system_stm32f10x.h)(0x559D2740)
 I (.\TI_BRD_LIB\Library\tft.h)(0x5BCB055A)
 I (.\TI_BRD_LIB\Library\keypad.h)(0x5BCB055A)
-F (.\rpn.c)(0x5BCB27C7)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\TI_BRD_LIB\Library -I .\TI_BRD_LIB\Simulated_Board-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\Inc\ST\STM32F10x-D__UVISION_VERSION="523" -DSIMULATION -DSTM32F10X_HD-o .\objects\rpn.o --omf_browse .\objects\rpn.crf --depend .\objects\rpn.d)
+F (.\rpn.c)(0x5BCB60BB)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\TI_BRD_LIB\Library -I .\TI_BRD_LIB\Simulated_Board-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\Inc\ST\STM32F10x-D__UVISION_VERSION="523" -DSIMULATION -DSTM32F10X_HD-o .\objects\rpn.o --omf_browse .\objects\rpn.crf --depend .\objects\rpn.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F65B18)
 I (.\TI_BRD_LIB\Library\TI_Lib.h)(0x5BCB055A)
 I (.\TI_BRD_LIB\Library\TI_memory_map.h)(0x5BCB055A)
@@ -147,7 +148,7 @@ I (C:\Keil_v5\ARM\Inc\ST\STM32F10x\system_stm32f10x.h)(0x559D2740)
 I (.\TI_BRD_LIB\Library\tft.h)(0x5BCB055A)
 I (.\TI_BRD_LIB\Library\keypad.h)(0x5BCB055A)
 I (stack.h)(0x5BCB302F)
-F (.\input.c)(0x5BCB327B)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\TI_BRD_LIB\Library -I .\TI_BRD_LIB\Simulated_Board-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\Inc\ST\STM32F10x-D__UVISION_VERSION="523" -DSIMULATION -DSTM32F10X_HD-o .\objects\input.o --omf_browse .\objects\input.crf --depend .\objects\input.d)
+F (.\input.c)(0x5BCB6177)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\TI_BRD_LIB\Library -I .\TI_BRD_LIB\Simulated_Board-IC:\Keil_v5\ARM\RV31\INC-IC:\Keil_v5\ARM\CMSIS\Include-IC:\Keil_v5\ARM\Inc\ST\STM32F10x-D__UVISION_VERSION="523" -DSIMULATION -DSTM32F10X_HD-o .\objects\input.o --omf_browse .\objects\input.crf --depend .\objects\input.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F65B18)
 I (.\TI_BRD_LIB\Library\TI_Lib.h)(0x5BCB055A)
 I (.\TI_BRD_LIB\Library\TI_memory_map.h)(0x5BCB055A)

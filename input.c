@@ -17,12 +17,12 @@ char zeichenEinlesen(){
 	return touchInput;
 }
 
-int zifferHinzufuegen(int zahl, char eingabe)
+int zifferHinzufuegen(int zahl, char eingabe) // eventuell über pop()
 {
 	int eingabeZahl = eingabe - '0';
 	zahl = zahl * 10 + eingabeZahl; // hinzuzufuegende Ziffer wird an die Zahl rangehaengt
 	
-	// Ausgabe der Zahl auf dem TFT
+	// Ausgabe der Zahl auf dem TFT (für debug)
 	char outputString[12];
 	sprintf(outputString, "%d", zahl);
 	TFT_cls();
