@@ -12,3 +12,4 @@
 .\objects\main.o: .\TI_BRD_LIB\Library\keypad.h
 .\objects\main.o: stack.h
 .\objects\main.o: input.h
+.\objects\main.o: rpn.h

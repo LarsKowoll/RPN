@@ -10,6 +10,7 @@
 #include "keypad.h"
 #include "stack.h"
 #include "input.h"
+#include "rpn.h"
 
 /**
   * @brief  Konvertiert das uebergebe Zeichen in einen Ganzzahlwert
@@ -40,12 +41,40 @@ int main(void) {
   // Initialisierung
   Init_TI_Board();  
   Make_Touch_Pad();  
-  char sum = 0;
+  char zeichen = 0;
 	
-while(1)
+while(1) // super loop
 {
-	sum = einlesen();
-	berechne(sum);
+	static int zahl;
+	zeichen = zeichenEinlesen();
+	
+	char outputString[12];
+	
+	switch(zeichen)
+	{
+		case '0':
+		case '1':
+		case '2':
+		case '3':
+		case '4':
+		case '5':
+		case '6':
+		case '7':
+		case '8':
+		case '9': zahl = zifferHinzufuegen(zahl, zeichen);
+							break;
+		case ' ': push(zahl);
+							zahl = 0;
+							TFT_cls();
+							break;
+		case 'p': 
+							sprintf(outputString, "%d", pop());
+							TFT_cls();
+							TFT_puts(outputString);
+							break;
+	}
+	
+	// berechne(zeichen);
 }
 		
 	

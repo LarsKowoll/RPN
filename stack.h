@@ -1,9 +1,3 @@
-/* 
- * File:   keypad.h
- * Author: Alfred Lohmann
- *
- * Created: 26.03.2014
-*/
 #ifndef STACK_H
 #define	STACK_H
 

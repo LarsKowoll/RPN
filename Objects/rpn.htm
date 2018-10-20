@@ -3,16 +3,16 @@
 <title>Static Call Graph - [.\Objects\rpn.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\rpn.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Sat Oct 20 11:06:35 2018
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Sat Oct 20 15:56:09 2018
 <BR><P>
-<H3>Maximum Stack Usage =        424 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        440 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-__rt_entry_main &rArr; main &rArr; einlesen &rArr; Get_Touch_Pad_Input &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
+__rt_entry_main &rArr; main &rArr; zeichenEinlesen &rArr; Get_Touch_Pad_Input &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 <P>
 <H3>
 Functions with no stack information
 </H3><UL>
- <LI><a href="#[59]">__user_initial_stackheap</a>
+ <LI><a href="#[5d]">__user_initial_stackheap</a>
 </UL>
 </UL>
 <P>
@@ -86,54 +86,62 @@ Function Pointers
  <LI><a href="#[21]">USB_LP_CAN1_RX0_IRQHandler</a> from startup_stm32f10x_md.o(.text) referenced from startup_stm32f10x_md.o(RESET)
  <LI><a href="#[8]">UsageFault_Handler</a> from startup_stm32f10x_md.o(.text) referenced from startup_stm32f10x_md.o(RESET)
  <LI><a href="#[d]">WWDG_IRQHandler</a> from startup_stm32f10x_md.o(.text) referenced from startup_stm32f10x_md.o(RESET)
- <LI><a href="#[3c]">__main</a> from __main.o(!!!main) referenced from startup_stm32f10x_md.o(.text)
- <LI><a href="#[3a]">_printf_input_char</a> from _printf_char_common.o(.text) referenced from _printf_char_common.o(.text)
- <LI><a href="#[3b]">fputc</a> from retarget.o(i.fputc) referenced from _printf_char_file.o(.text)
+ <LI><a href="#[3d]">__main</a> from __main.o(!!!main) referenced from startup_stm32f10x_md.o(.text)
+ <LI><a href="#[3b]">_printf_input_char</a> from _printf_char_common.o(.text) referenced from _printf_char_common.o(.text)
+ <LI><a href="#[3a]">_sputc</a> from _sputc.o(.text) referenced from noretval__2sprintf.o(.text)
+ <LI><a href="#[3c]">fputc</a> from retarget.o(i.fputc) referenced from _printf_char_file.o(.text)
 </UL>
 <P>
 <H3>
 Global Symbols
 </H3>
-<P><STRONG><a name="[3c]"></a>__main</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, __main.o(!!!main))
-<BR><BR>[Calls]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
-<LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
+<P><STRONG><a name="[3d]"></a>__main</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, __main.o(!!!main))
+<BR><BR>[Calls]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
+<LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
 </UL>
 
-<P><STRONG><a name="[3d]"></a>__scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter))
-<BR><BR>[Called By]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+<P><STRONG><a name="[3e]"></a>__scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter))
+<BR><BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 </UL>
 
-<P><STRONG><a name="[3f]"></a>__scatterload_rt2</STRONG> (Thumb, 44 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
+<P><STRONG><a name="[40]"></a>__scatterload_rt2</STRONG> (Thumb, 44 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
 </UL>
 
 <P><STRONG><a name="[83]"></a>__scatterload_rt2_thumb_only</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
 
 <P><STRONG><a name="[84]"></a>__scatterload_null</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
 
-<P><STRONG><a name="[40]"></a>__scatterload_copy</STRONG> (Thumb, 26 bytes, Stack size unknown bytes, __scatter_copy.o(!!handler_copy), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_copy
+<P><STRONG><a name="[41]"></a>__scatterload_copy</STRONG> (Thumb, 26 bytes, Stack size unknown bytes, __scatter_copy.o(!!handler_copy), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_copy
 </UL>
-<BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_copy
+<BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_copy
 </UL>
 
 <P><STRONG><a name="[85]"></a>__scatterload_zeroinit</STRONG> (Thumb, 28 bytes, Stack size unknown bytes, __scatter_zi.o(!!handler_zi), UNUSED)
 
-<P><STRONG><a name="[53]"></a>_printf_percent</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000))
-<BR><BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__printf
+<P><STRONG><a name="[42]"></a>_printf_d</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, _printf_d.o(.ARM.Collect$$_printf_percent$$00000009))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72 + Unknown Stack Size
+<LI>Call Chain = _printf_d &rArr; _printf_int_dec &rArr; _printf_int_common &rArr; _printf_post_padding
+</UL>
+<BR>[Calls]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_dec
 </UL>
 
-<P><STRONG><a name="[41]"></a>_printf_x</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, _printf_x.o(.ARM.Collect$$_printf_percent$$0000000C))
+<P><STRONG><a name="[58]"></a>_printf_percent</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000))
+<BR><BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__printf
+</UL>
+
+<P><STRONG><a name="[44]"></a>_printf_x</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, _printf_x.o(.ARM.Collect$$_printf_percent$$0000000C))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64 + Unknown Stack Size
 <LI>Call Chain = _printf_x &rArr; _printf_int_hex &rArr; _printf_int_common &rArr; _printf_post_padding
 </UL>
-<BR>[Calls]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_hex
+<BR>[Calls]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_hex
 </UL>
 
 <P><STRONG><a name="[86]"></a>_printf_percent_end</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, _printf_percent_end.o(.ARM.Collect$$_printf_percent$$00000017))
 
-<P><STRONG><a name="[46]"></a>__rt_lib_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit.o(.ARM.Collect$$libinit$$00000000))
-<BR><BR>[Called By]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_li
+<P><STRONG><a name="[49]"></a>__rt_lib_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit.o(.ARM.Collect$$libinit$$00000000))
+<BR><BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_li
 </UL>
 
 <P><STRONG><a name="[87]"></a>__rt_lib_init_alloca_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000002E))
@@ -178,8 +186,8 @@ Global Symbols
 
 <P><STRONG><a name="[9b]"></a>__rt_lib_init_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000C))
 
-<P><STRONG><a name="[4b]"></a>__rt_lib_shutdown</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown.o(.ARM.Collect$$libshutdown$$00000000))
-<BR><BR>[Called By]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_ls
+<P><STRONG><a name="[4e]"></a>__rt_lib_shutdown</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown.o(.ARM.Collect$$libshutdown$$00000000))
+<BR><BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_ls
 </UL>
 
 <P><STRONG><a name="[9c]"></a>__rt_lib_shutdown_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000002))
@@ -196,48 +204,48 @@ Global Symbols
 
 <P><STRONG><a name="[a2]"></a>__rt_lib_shutdown_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C))
 
-<P><STRONG><a name="[3e]"></a>__rt_entry</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry.o(.ARM.Collect$$rtentry$$00000000))
-<BR><BR>[Called By]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
-<LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+<P><STRONG><a name="[3f]"></a>__rt_entry</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry.o(.ARM.Collect$$rtentry$$00000000))
+<BR><BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
+<LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 </UL>
 
 <P><STRONG><a name="[a3]"></a>__rt_entry_presh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000002))
 
-<P><STRONG><a name="[43]"></a>__rt_entry_sh</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry4.o(.ARM.Collect$$rtentry$$00000004))
+<P><STRONG><a name="[46]"></a>__rt_entry_sh</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry4.o(.ARM.Collect$$rtentry$$00000004))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_sh &rArr; __user_setup_stackheap
 </UL>
-<BR>[Calls]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
+<BR>[Calls]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
-<P><STRONG><a name="[45]"></a>__rt_entry_li</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000A))
-<BR><BR>[Calls]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init
+<P><STRONG><a name="[48]"></a>__rt_entry_li</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000A))
+<BR><BR>[Calls]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init
 </UL>
 
 <P><STRONG><a name="[a4]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
-<P><STRONG><a name="[47]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 424 + Unknown Stack Size
-<LI>Call Chain = __rt_entry_main &rArr; main &rArr; einlesen &rArr; Get_Touch_Pad_Input &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
+<P><STRONG><a name="[4a]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
+<BR><BR>[Stack]<UL><LI>Max Depth = 440 + Unknown Stack Size
+<LI>Call Chain = __rt_entry_main &rArr; main &rArr; zeichenEinlesen &rArr; Get_Touch_Pad_Input &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
+<BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
 </UL>
 
 <P><STRONG><a name="[a5]"></a>__rt_entry_postli_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000C))
 
-<P><STRONG><a name="[5a]"></a>__rt_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit.o(.ARM.Collect$$rtexit$$00000000))
-<BR><BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
+<P><STRONG><a name="[5e]"></a>__rt_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit.o(.ARM.Collect$$rtexit$$00000000))
+<BR><BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
 </UL>
 
-<P><STRONG><a name="[4a]"></a>__rt_exit_ls</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000003))
-<BR><BR>[Calls]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_shutdown
+<P><STRONG><a name="[4d]"></a>__rt_exit_ls</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000003))
+<BR><BR>[Calls]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_shutdown
 </UL>
 
 <P><STRONG><a name="[a6]"></a>__rt_exit_prels_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000002))
 
-<P><STRONG><a name="[4c]"></a>__rt_exit_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000004))
-<BR><BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
+<P><STRONG><a name="[4f]"></a>__rt_exit_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000004))
+<BR><BR>[Calls]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
 </UL>
 
 <P><STRONG><a name="[3]"></a>Reset_Handler</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, startup_stm32f10x_md.o(.text))
@@ -432,55 +440,74 @@ Global Symbols
 <P><STRONG><a name="[d]"></a>WWDG_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f10x_md.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(RESET)
 </UL>
-<P><STRONG><a name="[59]"></a>__user_initial_stackheap</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, startup_stm32f10x_md.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
+<P><STRONG><a name="[5d]"></a>__user_initial_stackheap</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, startup_stm32f10x_md.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
-<P><STRONG><a name="[4e]"></a>__2printf</STRONG> (Thumb, 20 bytes, Stack size 24 bytes, noretval__2printf.o(.text))
+<P><STRONG><a name="[51]"></a>__2printf</STRONG> (Thumb, 20 bytes, Stack size 24 bytes, noretval__2printf.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144 + Unknown Stack Size
 <LI>Call Chain = __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_file
+<BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_file
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_Touch_Pad_Input
+<BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_Touch_Pad_Input
 </UL>
 
-<P><STRONG><a name="[54]"></a>_printf_pre_padding</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, _printf_pad.o(.text))
+<P><STRONG><a name="[53]"></a>__2sprintf</STRONG> (Thumb, 34 bytes, Stack size 32 bytes, noretval__2sprintf.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 136 + Unknown Stack Size
+<LI>Call Chain = __2sprintf &rArr; _printf_char_common &rArr; __printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sputc
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_common
+</UL>
+<BR>[Called By]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;zifferHinzufuegen
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[59]"></a>_printf_pre_padding</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, _printf_pad.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = _printf_pre_padding
 </UL>
-<BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
+<BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
 </UL>
 
-<P><STRONG><a name="[55]"></a>_printf_post_padding</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, _printf_pad.o(.text))
+<P><STRONG><a name="[5a]"></a>_printf_post_padding</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, _printf_pad.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = _printf_post_padding
 </UL>
-<BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
+<BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
 </UL>
 
-<P><STRONG><a name="[42]"></a>_printf_int_hex</STRONG> (Thumb, 84 bytes, Stack size 16 bytes, _printf_hex_int.o(.text))
+<P><STRONG><a name="[43]"></a>_printf_int_dec</STRONG> (Thumb, 104 bytes, Stack size 24 bytes, _printf_dec.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = _printf_int_dec &rArr; _printf_int_common &rArr; _printf_post_padding
+</UL>
+<BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
+</UL>
+<BR>[Called By]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_d
+</UL>
+
+<P><STRONG><a name="[45]"></a>_printf_int_hex</STRONG> (Thumb, 84 bytes, Stack size 16 bytes, _printf_hex_int.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = _printf_int_hex &rArr; _printf_int_common &rArr; _printf_post_padding
 </UL>
-<BR>[Calls]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
+<BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
 </UL>
-<BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_x
+<BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_x
 </UL>
 
 <P><STRONG><a name="[a7]"></a>_printf_longlong_hex</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, _printf_hex_int.o(.text), UNUSED)
 
-<P><STRONG><a name="[51]"></a>__printf</STRONG> (Thumb, 308 bytes, Stack size 40 bytes, __printf_flags_wp.o(.text))
+<P><STRONG><a name="[56]"></a>__printf</STRONG> (Thumb, 308 bytes, Stack size 40 bytes, __printf_flags_wp.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40 + Unknown Stack Size
 <LI>Call Chain = __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_percent
-<LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_is_digit
+<BR>[Calls]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_percent
+<LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_is_digit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_common
+<BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_common
 </UL>
 
-<P><STRONG><a name="[79]"></a>strlen</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, strlen.o(.text))
+<P><STRONG><a name="[7d]"></a>strlen</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, strlen.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = strlen
 </UL>
-<BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_puts
+<BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_puts
 </UL>
 
 <P><STRONG><a name="[a8]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
@@ -489,437 +516,417 @@ Global Symbols
 
 <P><STRONG><a name="[aa]"></a>__rt_heap_expand$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
-<P><STRONG><a name="[50]"></a>_printf_int_common</STRONG> (Thumb, 178 bytes, Stack size 32 bytes, _printf_intcommon.o(.text))
+<P><STRONG><a name="[55]"></a>_printf_int_common</STRONG> (Thumb, 178 bytes, Stack size 32 bytes, _printf_intcommon.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = _printf_int_common &rArr; _printf_post_padding
 </UL>
-<BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding
-<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding
+<BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding
+<LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding
 </UL>
-<BR>[Called By]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_hex
+<BR>[Called By]<UL><LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_hex
+<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_dec
 </UL>
 
-<P><STRONG><a name="[56]"></a>_printf_char_common</STRONG> (Thumb, 32 bytes, Stack size 64 bytes, _printf_char_common.o(.text))
+<P><STRONG><a name="[54]"></a>_printf_char_common</STRONG> (Thumb, 32 bytes, Stack size 64 bytes, _printf_char_common.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104 + Unknown Stack Size
 <LI>Call Chain = _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__printf
+<BR>[Calls]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_file
+<BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_file
+<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 
-<P><STRONG><a name="[4f]"></a>_printf_char_file</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, _printf_char_file.o(.text))
+<P><STRONG><a name="[3a]"></a>_sputc</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, _sputc.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> noretval__2sprintf.o(.text)
+</UL>
+<P><STRONG><a name="[52]"></a>_printf_char_file</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, _printf_char_file.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120 + Unknown Stack Size
 <LI>Call Chain = _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ferror
-<LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_common
+<BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ferror
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_common
 </UL>
-<BR>[Called By]<UL><LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+<BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 
-<P><STRONG><a name="[44]"></a>__user_setup_stackheap</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, sys_stackheap_outer.o(.text))
+<P><STRONG><a name="[47]"></a>__user_setup_stackheap</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, sys_stackheap_outer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
 <LI>Call Chain = __user_setup_stackheap
 </UL>
-<BR>[Calls]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_initial_stackheap
-<LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_perproc_libspace
+<BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_initial_stackheap
+<LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_perproc_libspace
 </UL>
-<BR>[Called By]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_sh
+<BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_sh
 </UL>
 
-<P><STRONG><a name="[49]"></a>exit</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, exit.o(.text))
+<P><STRONG><a name="[4c]"></a>exit</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, exit.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
 <LI>Call Chain = exit
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit
+<BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
+<BR>[Called By]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
 <P><STRONG><a name="[ab]"></a>__user_libspace</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
 
-<P><STRONG><a name="[58]"></a>__user_perproc_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
+<P><STRONG><a name="[5c]"></a>__user_perproc_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
 <P><STRONG><a name="[ac]"></a>__user_perthread_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
 
-<P><STRONG><a name="[64]"></a>Delay</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, ti_lib.o(i.Delay))
+<P><STRONG><a name="[68]"></a>Delay</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, ti_lib.o(i.Delay))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = Delay
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_TI_Board
+<BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_TI_Board
 </UL>
 
-<P><STRONG><a name="[5b]"></a>Get_Touch_Pad_Input</STRONG> (Thumb, 240 bytes, Stack size 272 bytes, keypad.o(i.Get_Touch_Pad_Input))
+<P><STRONG><a name="[5f]"></a>Get_Touch_Pad_Input</STRONG> (Thumb, 240 bytes, Stack size 272 bytes, keypad.o(i.Get_Touch_Pad_Input))
 <BR><BR>[Stack]<UL><LI>Max Depth = 416 + Unknown Stack Size
 <LI>Call Chain = Get_Touch_Pad_Input &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_get_data
-<LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
+<BR>[Calls]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_get_data
+<LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;einlesen
-</UL>
-
-<P><STRONG><a name="[60]"></a>Init_IO</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, sim_board_io.o(i.Init_IO))
-<BR><BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_TI_Board
+<BR>[Called By]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;zeichenEinlesen
 </UL>
 
-<P><STRONG><a name="[61]"></a>Init_SPI</STRONG> (Thumb, 60 bytes, Stack size 0 bytes, sim_board_io.o(i.Init_SPI))
-<BR><BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_TI_Board
+<P><STRONG><a name="[64]"></a>Init_IO</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, sim_board_io.o(i.Init_IO))
+<BR><BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_TI_Board
 </UL>
 
-<P><STRONG><a name="[5d]"></a>Init_System_Clock</STRONG> (Thumb, 94 bytes, Stack size 16 bytes, sim_board_io.o(i.Init_System_Clock))
+<P><STRONG><a name="[65]"></a>Init_SPI</STRONG> (Thumb, 60 bytes, Stack size 0 bytes, sim_board_io.o(i.Init_SPI))
+<BR><BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_TI_Board
+</UL>
+
+<P><STRONG><a name="[61]"></a>Init_System_Clock</STRONG> (Thumb, 94 bytes, Stack size 16 bytes, sim_board_io.o(i.Init_System_Clock))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = Init_System_Clock &rArr; SystemCoreClockUpdate
 </UL>
-<BR>[Calls]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemCoreClockUpdate
+<BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemCoreClockUpdate
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_TI_Board
+<BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_TI_Board
 </UL>
 
-<P><STRONG><a name="[5f]"></a>Init_TI_Board</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, ti_lib.o(i.Init_TI_Board))
+<P><STRONG><a name="[63]"></a>Init_TI_Board</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, ti_lib.o(i.Init_TI_Board))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = Init_TI_Board &rArr; TFT_Init &rArr; TFT_touch_key_feedback &rArr; TFT_send_data
 </UL>
-<BR>[Calls]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SER_Init
-<LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_System_Clock
-<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_SPI
-<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_IO
-<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay
-<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_Init
+<BR>[Calls]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SER_Init
+<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_System_Clock
+<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_SPI
+<LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_IO
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delay
+<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[65]"></a>Make_Touch_Pad</STRONG> (Thumb, 1502 bytes, Stack size 80 bytes, keypad.o(i.Make_Touch_Pad))
+<P><STRONG><a name="[69]"></a>Make_Touch_Pad</STRONG> (Thumb, 1502 bytes, Stack size 80 bytes, keypad.o(i.Make_Touch_Pad))
 <BR><BR>[Stack]<UL><LI>Max Depth = 140<LI>Call Chain = Make_Touch_Pad &rArr; TFT_touch_area_color &rArr; TFT_send_data
 </UL>
-<BR>[Calls]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_area_frame
-<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_area_font_color
-<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_area_font
-<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_area_color
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_area_clear
-<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_area
-<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_terminal_on
-<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_set_window
-<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_set_font_color
-<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_graphic_cls
-<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_cursor_off
-<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_Init
+<BR>[Calls]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_area_frame
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_area_font_color
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_area_font
+<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_area_color
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_area_clear
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_area
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_terminal_on
+<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_set_window
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_set_font_color
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_graphic_cls
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_cursor_off
+<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[62]"></a>SER_Init</STRONG> (Thumb, 134 bytes, Stack size 0 bytes, serial.o(i.SER_Init))
-<BR><BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_TI_Board
+<BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[82]"></a>SER_PutChar</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, serial.o(i.SER_PutChar))
-<BR><BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fputc
+<P><STRONG><a name="[66]"></a>SER_Init</STRONG> (Thumb, 134 bytes, Stack size 0 bytes, serial.o(i.SER_Init))
+<BR><BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_TI_Board
+</UL>
+
+<P><STRONG><a name="[7e]"></a>SER_PutChar</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, serial.o(i.SER_PutChar))
+<BR><BR>[Called By]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fputc
 </UL>
 
 <P><STRONG><a name="[c]"></a>SysTick_Handler</STRONG> (Thumb, 8 bytes, Stack size 4 bytes, ti_lib.o(i.SysTick_Handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = SysTick_Handler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimingDelay_Decrement
+<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TimingDelay_Decrement
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(RESET)
 </UL>
-<P><STRONG><a name="[5e]"></a>SystemCoreClockUpdate</STRONG> (Thumb, 142 bytes, Stack size 8 bytes, system_stm32f10x.o(i.SystemCoreClockUpdate))
+<P><STRONG><a name="[62]"></a>SystemCoreClockUpdate</STRONG> (Thumb, 142 bytes, Stack size 8 bytes, system_stm32f10x.o(i.SystemCoreClockUpdate))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SystemCoreClockUpdate
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_System_Clock
+<BR>[Called By]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_System_Clock
 </UL>
 
 <P><STRONG><a name="[38]"></a>SystemInit</STRONG> (Thumb, 78 bytes, Stack size 8 bytes, system_stm32f10x.o(i.SystemInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = SystemInit &rArr; SetSysClock &rArr; SetSysClockTo72
 </UL>
-<BR>[Calls]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClock
+<BR>[Calls]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClock
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_md.o(.text)
 </UL>
-<P><STRONG><a name="[63]"></a>TFT_Init</STRONG> (Thumb, 20 bytes, Stack size 4 bytes, tft.o(i.TFT_Init))
+<P><STRONG><a name="[67]"></a>TFT_Init</STRONG> (Thumb, 20 bytes, Stack size 4 bytes, tft.o(i.TFT_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = TFT_Init &rArr; TFT_touch_key_feedback &rArr; TFT_send_data
 </UL>
-<BR>[Calls]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_key_feedback
-<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_terminal_on
-<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_cls
+<BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_key_feedback
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_terminal_on
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_cls
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_TI_Board
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Make_Touch_Pad
+<BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_TI_Board
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Make_Touch_Pad
 </UL>
 
-<P><STRONG><a name="[74]"></a>TFT_cls</STRONG> (Thumb, 10 bytes, Stack size 4 bytes, tft.o(i.TFT_cls))
+<P><STRONG><a name="[78]"></a>TFT_cls</STRONG> (Thumb, 10 bytes, Stack size 4 bytes, tft.o(i.TFT_cls))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = TFT_cls &rArr; TFT_putc &rArr; TFT_send_data
 </UL>
-<BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_putc
+<BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_putc
 </UL>
-<BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_Init
+<BR>[Called By]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;zifferHinzufuegen
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_Init
 </UL>
 
-<P><STRONG><a name="[66]"></a>TFT_cursor_off</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, tft.o(i.TFT_cursor_off))
+<P><STRONG><a name="[6a]"></a>TFT_cursor_off</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, tft.o(i.TFT_cursor_off))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = TFT_cursor_off &rArr; TFT_send_data
 </UL>
-<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
+<BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
 </UL>
-<BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Make_Touch_Pad
+<BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Make_Touch_Pad
 </UL>
 
-<P><STRONG><a name="[5c]"></a>TFT_get_data</STRONG> (Thumb, 328 bytes, Stack size 24 bytes, tft.o(i.TFT_get_data))
+<P><STRONG><a name="[60]"></a>TFT_get_data</STRONG> (Thumb, 328 bytes, Stack size 24 bytes, tft.o(i.TFT_get_data))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = TFT_get_data
 </UL>
-<BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_Touch_Pad_Input
+<BR>[Called By]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_Touch_Pad_Input
 </UL>
 
-<P><STRONG><a name="[67]"></a>TFT_graphic_cls</STRONG> (Thumb, 30 bytes, Stack size 12 bytes, tft.o(i.TFT_graphic_cls))
+<P><STRONG><a name="[6b]"></a>TFT_graphic_cls</STRONG> (Thumb, 30 bytes, Stack size 12 bytes, tft.o(i.TFT_graphic_cls))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = TFT_graphic_cls &rArr; TFT_send_data
 </UL>
-<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
+<BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
 </UL>
-<BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Make_Touch_Pad
+<BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Make_Touch_Pad
 </UL>
 
-<P><STRONG><a name="[76]"></a>TFT_putc</STRONG> (Thumb, 30 bytes, Stack size 12 bytes, tft.o(i.TFT_putc))
+<P><STRONG><a name="[7a]"></a>TFT_putc</STRONG> (Thumb, 30 bytes, Stack size 12 bytes, tft.o(i.TFT_putc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = TFT_putc &rArr; TFT_send_data
 </UL>
-<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
+<BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
 </UL>
-<BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_cls
+<BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_cls
 </UL>
 
-<P><STRONG><a name="[78]"></a>TFT_puts</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, tft.o(i.TFT_puts))
+<P><STRONG><a name="[7c]"></a>TFT_puts</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, tft.o(i.TFT_puts))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = TFT_puts &rArr; TFT_send_data
 </UL>
-<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
-<LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;push
-<LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pop
+<BR>[Called By]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;zifferHinzufuegen
+<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;push
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pop
+<LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[77]"></a>TFT_send_data</STRONG> (Thumb, 230 bytes, Stack size 20 bytes, tft.o(i.TFT_send_data))
+<P><STRONG><a name="[7b]"></a>TFT_send_data</STRONG> (Thumb, 230 bytes, Stack size 20 bytes, tft.o(i.TFT_send_data))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = TFT_send_data
 </UL>
-<BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_key_feedback
-<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_puts
-<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_area_frame
-<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_area_font_color
-<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_area_font
-<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_area_color
-<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_area_clear
-<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_area
-<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_terminal_on
-<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_set_window
-<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_set_font_color
-<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_putc
-<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_graphic_cls
-<LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_cursor_off
+<BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_key_feedback
+<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_puts
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_area_frame
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_area_font_color
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_area_font
+<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_area_color
+<LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_area_clear
+<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_touch_area
+<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_terminal_on
+<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_set_window
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_set_font_color
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_putc
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_graphic_cls
+<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_cursor_off
 </UL>
 
-<P><STRONG><a name="[69]"></a>TFT_set_font_color</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, tft.o(i.TFT_set_font_color))
+<P><STRONG><a name="[6d]"></a>TFT_set_font_color</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, tft.o(i.TFT_set_font_color))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = TFT_set_font_color &rArr; TFT_send_data
 </UL>
-<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
+<BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
 </UL>
-<BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Make_Touch_Pad
+<BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Make_Touch_Pad
 </UL>
 
-<P><STRONG><a name="[6a]"></a>TFT_set_window</STRONG> (Thumb, 78 bytes, Stack size 36 bytes, tft.o(i.TFT_set_window))
+<P><STRONG><a name="[6e]"></a>TFT_set_window</STRONG> (Thumb, 78 bytes, Stack size 36 bytes, tft.o(i.TFT_set_window))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = TFT_set_window &rArr; TFT_send_data
 </UL>
-<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
+<BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
 </UL>
-<BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Make_Touch_Pad
+<BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Make_Touch_Pad
 </UL>
 
-<P><STRONG><a name="[6b]"></a>TFT_terminal_on</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, tft.o(i.TFT_terminal_on))
+<P><STRONG><a name="[6f]"></a>TFT_terminal_on</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, tft.o(i.TFT_terminal_on))
 <BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = TFT_terminal_on &rArr; TFT_send_data
 </UL>
-<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
+<BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
 </UL>
-<BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_Init
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Make_Touch_Pad
+<BR>[Called By]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_Init
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Make_Touch_Pad
 </UL>
 
-<P><STRONG><a name="[70]"></a>TFT_touch_area</STRONG> (Thumb, 172 bytes, Stack size 36 bytes, tft.o(i.TFT_touch_area))
+<P><STRONG><a name="[74]"></a>TFT_touch_area</STRONG> (Thumb, 172 bytes, Stack size 36 bytes, tft.o(i.TFT_touch_area))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = TFT_touch_area &rArr; TFT_send_data
 </UL>
-<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
+<BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
 </UL>
-<BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Make_Touch_Pad
+<BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Make_Touch_Pad
 </UL>
 
-<P><STRONG><a name="[68]"></a>TFT_touch_area_clear</STRONG> (Thumb, 42 bytes, Stack size 12 bytes, tft.o(i.TFT_touch_area_clear))
+<P><STRONG><a name="[6c]"></a>TFT_touch_area_clear</STRONG> (Thumb, 42 bytes, Stack size 12 bytes, tft.o(i.TFT_touch_area_clear))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = TFT_touch_area_clear &rArr; TFT_send_data
 </UL>
-<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
+<BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
 </UL>
-<BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Make_Touch_Pad
+<BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Make_Touch_Pad
 </UL>
 
-<P><STRONG><a name="[6f]"></a>TFT_touch_area_color</STRONG> (Thumb, 86 bytes, Stack size 40 bytes, tft.o(i.TFT_touch_area_color))
+<P><STRONG><a name="[73]"></a>TFT_touch_area_color</STRONG> (Thumb, 86 bytes, Stack size 40 bytes, tft.o(i.TFT_touch_area_color))
 <BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = TFT_touch_area_color &rArr; TFT_send_data
 </UL>
-<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
+<BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
 </UL>
-<BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Make_Touch_Pad
+<BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Make_Touch_Pad
 </UL>
 
-<P><STRONG><a name="[6d]"></a>TFT_touch_area_font</STRONG> (Thumb, 38 bytes, Stack size 12 bytes, tft.o(i.TFT_touch_area_font))
+<P><STRONG><a name="[71]"></a>TFT_touch_area_font</STRONG> (Thumb, 38 bytes, Stack size 12 bytes, tft.o(i.TFT_touch_area_font))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = TFT_touch_area_font &rArr; TFT_send_data
 </UL>
-<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
+<BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
 </UL>
-<BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Make_Touch_Pad
+<BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Make_Touch_Pad
 </UL>
 
-<P><STRONG><a name="[6c]"></a>TFT_touch_area_font_color</STRONG> (Thumb, 46 bytes, Stack size 20 bytes, tft.o(i.TFT_touch_area_font_color))
+<P><STRONG><a name="[70]"></a>TFT_touch_area_font_color</STRONG> (Thumb, 46 bytes, Stack size 20 bytes, tft.o(i.TFT_touch_area_font_color))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = TFT_touch_area_font_color &rArr; TFT_send_data
 </UL>
-<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
+<BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
 </UL>
-<BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Make_Touch_Pad
+<BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Make_Touch_Pad
 </UL>
 
-<P><STRONG><a name="[6e]"></a>TFT_touch_area_frame</STRONG> (Thumb, 46 bytes, Stack size 20 bytes, tft.o(i.TFT_touch_area_frame))
+<P><STRONG><a name="[72]"></a>TFT_touch_area_frame</STRONG> (Thumb, 46 bytes, Stack size 20 bytes, tft.o(i.TFT_touch_area_frame))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = TFT_touch_area_frame &rArr; TFT_send_data
 </UL>
-<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
+<BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
 </UL>
-<BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Make_Touch_Pad
+<BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Make_Touch_Pad
 </UL>
 
-<P><STRONG><a name="[75]"></a>TFT_touch_key_feedback</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, tft.o(i.TFT_touch_key_feedback))
+<P><STRONG><a name="[79]"></a>TFT_touch_key_feedback</STRONG> (Thumb, 72 bytes, Stack size 16 bytes, tft.o(i.TFT_touch_key_feedback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = TFT_touch_key_feedback &rArr; TFT_send_data
 </UL>
-<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
+<BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_send_data
 </UL>
-<BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_Init
+<BR>[Called By]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_Init
 </UL>
 
-<P><STRONG><a name="[73]"></a>TimingDelay_Decrement</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, ti_lib.o(i.TimingDelay_Decrement))
+<P><STRONG><a name="[77]"></a>TimingDelay_Decrement</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, ti_lib.o(i.TimingDelay_Decrement))
 <BR><BR>[Called By]<UL><LI><a href="#[c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
 </UL>
 
-<P><STRONG><a name="[52]"></a>_is_digit</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, __printf_wp.o(i._is_digit))
-<BR><BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__printf
+<P><STRONG><a name="[57]"></a>_is_digit</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, __printf_wp.o(i._is_digit))
+<BR><BR>[Called By]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__printf
 </UL>
 
-<P><STRONG><a name="[4d]"></a>_sys_exit</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, retarget.o(i._sys_exit))
-<BR><BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_exit
+<P><STRONG><a name="[50]"></a>_sys_exit</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, retarget.o(i._sys_exit))
+<BR><BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_exit
 </UL>
 
-<P><STRONG><a name="[7a]"></a>add</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, rpn.o(i.add))
-<BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = add &rArr; pop &rArr; TFT_puts &rArr; TFT_send_data
-</UL>
-<BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pop
-</UL>
-<BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;berechne
+<P><STRONG><a name="[5b]"></a>ferror</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, retarget.o(i.ferror))
+<BR><BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_file
 </UL>
 
-<P><STRONG><a name="[7c]"></a>berechne</STRONG> (Thumb, 168 bytes, Stack size 16 bytes, rpn.o(i.berechne))
-<BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = berechne &rArr; sub &rArr; pop &rArr; TFT_puts &rArr; TFT_send_data
-</UL>
-<BR>[Calls]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;push
-<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sub
-<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mul
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;div
-<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;add
-</UL>
-<BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[80]"></a>div</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, rpn.o(i.div))
-<BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = div &rArr; pop &rArr; TFT_puts &rArr; TFT_send_data
-</UL>
-<BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pop
-</UL>
-<BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;berechne
-</UL>
-
-<P><STRONG><a name="[81]"></a>einlesen</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, input.o(i.einlesen))
-<BR><BR>[Stack]<UL><LI>Max Depth = 424 + Unknown Stack Size
-<LI>Call Chain = einlesen &rArr; Get_Touch_Pad_Input &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
-</UL>
-<BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_Touch_Pad_Input
-</UL>
-<BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[57]"></a>ferror</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, retarget.o(i.ferror))
-<BR><BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_file
-</UL>
-
-<P><STRONG><a name="[3b]"></a>fputc</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, retarget.o(i.fputc))
+<P><STRONG><a name="[3c]"></a>fputc</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, retarget.o(i.fputc))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = fputc
 </UL>
-<BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SER_PutChar
+<BR>[Calls]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SER_PutChar
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> _printf_char_file.o(.text)
 </UL>
-<P><STRONG><a name="[48]"></a>main</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, main.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 424 + Unknown Stack Size
-<LI>Call Chain = main &rArr; einlesen &rArr; Get_Touch_Pad_Input &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
+<P><STRONG><a name="[4b]"></a>main</STRONG> (Thumb, 170 bytes, Stack size 16 bytes, main.o(i.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 440 + Unknown Stack Size
+<LI>Call Chain = main &rArr; zeichenEinlesen &rArr; Get_Touch_Pad_Input &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;einlesen
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;berechne
-<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_TI_Board
-<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Make_Touch_Pad
+<BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;zifferHinzufuegen
+<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;zeichenEinlesen
+<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;push
+<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pop
+<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_TI_Board
+<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_puts
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_cls
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Make_Touch_Pad
+<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
-</UL>
-
-<P><STRONG><a name="[7f]"></a>mul</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, rpn.o(i.mul))
-<BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = mul &rArr; pop &rArr; TFT_puts &rArr; TFT_send_data
-</UL>
-<BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pop
-</UL>
-<BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;berechne
+<BR>[Called By]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[7b]"></a>pop</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, stack.o(i.pop))
+<P><STRONG><a name="[82]"></a>pop</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, stack.o(i.pop))
 <BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = pop &rArr; TFT_puts &rArr; TFT_send_data
 </UL>
-<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_puts
+<BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_puts
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sub
-<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mul
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;div
-<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;add
+<BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[7d]"></a>push</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, stack.o(i.push))
+<P><STRONG><a name="[81]"></a>push</STRONG> (Thumb, 40 bytes, Stack size 8 bytes, stack.o(i.push))
 <BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = push &rArr; TFT_puts &rArr; TFT_send_data
 </UL>
-<BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_puts
+<BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_puts
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;berechne
+<BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[7e]"></a>sub</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, rpn.o(i.sub))
-<BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = sub &rArr; pop &rArr; TFT_puts &rArr; TFT_send_data
+<P><STRONG><a name="[7f]"></a>zeichenEinlesen</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, input.o(i.zeichenEinlesen))
+<BR><BR>[Stack]<UL><LI>Max Depth = 424 + Unknown Stack Size
+<LI>Call Chain = zeichenEinlesen &rArr; Get_Touch_Pad_Input &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pop
+<BR>[Calls]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_Touch_Pad_Input
 </UL>
-<BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;berechne
+<BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[80]"></a>zifferHinzufuegen</STRONG> (Thumb, 42 bytes, Stack size 32 bytes, input.o(i.zifferHinzufuegen))
+<BR><BR>[Stack]<UL><LI>Max Depth = 168 + Unknown Stack Size
+<LI>Call Chain = zifferHinzufuegen &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_puts
+<LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_cls
+<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 <P>
 <H3>
 Local Symbols
 </H3>
-<P><STRONG><a name="[71]"></a>SetSysClock</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, system_stm32f10x.o(i.SetSysClock))
+<P><STRONG><a name="[75]"></a>SetSysClock</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, system_stm32f10x.o(i.SetSysClock))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = SetSysClock &rArr; SetSysClockTo72
 </UL>
-<BR>[Calls]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClockTo72
+<BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClockTo72
 </UL>
 <BR>[Called By]<UL><LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
 </UL>
 
-<P><STRONG><a name="[72]"></a>SetSysClockTo72</STRONG> (Thumb, 214 bytes, Stack size 12 bytes, system_stm32f10x.o(i.SetSysClockTo72))
+<P><STRONG><a name="[76]"></a>SetSysClockTo72</STRONG> (Thumb, 214 bytes, Stack size 12 bytes, system_stm32f10x.o(i.SetSysClockTo72))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = SetSysClockTo72
 </UL>
-<BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClock
+<BR>[Called By]<UL><LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClock
 </UL>
 
-<P><STRONG><a name="[3a]"></a>_printf_input_char</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, _printf_char_common.o(.text))
+<P><STRONG><a name="[3b]"></a>_printf_input_char</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, _printf_char_common.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> _printf_char_common.o(.text)
 </UL><P>
 <H3>
