@@ -10,6 +10,7 @@
 #include "keypad.h"
 #include "stack.h"
 #include "input.h"
+#include "output.h"
 #include "rpn.h"
 #include "main.h"
 
