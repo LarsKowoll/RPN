@@ -9,7 +9,7 @@ int add(void);
 int sub(void);
 int mul(void);
 int div(void);
-void berechne(char)
+void berechne(char);
 
 #ifdef	__cplusplus
 }

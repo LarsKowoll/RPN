@@ -876,6 +876,11 @@
               <FileType>1</FileType>
               <FilePath>.\input.c</FilePath>
             </File>
+            <File>
+              <FileName>output.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\output.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -993,6 +998,16 @@
               <FileName>input.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\input.h</FilePath>
+            </File>
+            <File>
+              <FileName>main.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\main.h</FilePath>
+            </File>
+            <File>
+              <FileName>output.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\output.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -1898,6 +1913,11 @@
               <FileType>1</FileType>
               <FilePath>.\input.c</FilePath>
             </File>
+            <File>
+              <FileName>output.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\output.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -1947,6 +1967,16 @@
               <FileName>input.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\input.h</FilePath>
+            </File>
+            <File>
+              <FileName>main.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\main.h</FilePath>
+            </File>
+            <File>
+              <FileName>output.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\output.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -2755,6 +2785,11 @@
               <FileType>1</FileType>
               <FilePath>.\input.c</FilePath>
             </File>
+            <File>
+              <FileName>output.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\output.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -2872,6 +2907,16 @@
               <FileName>input.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\input.h</FilePath>
+            </File>
+            <File>
+              <FileName>main.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\main.h</FilePath>
+            </File>
+            <File>
+              <FileName>output.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\output.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -3709,6 +3754,11 @@
               <FileType>1</FileType>
               <FilePath>.\input.c</FilePath>
             </File>
+            <File>
+              <FileName>output.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\output.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -3758,6 +3808,16 @@
               <FileName>input.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\input.h</FilePath>
+            </File>
+            <File>
+              <FileName>main.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\main.h</FilePath>
+            </File>
+            <File>
+              <FileName>output.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\output.h</FilePath>
             </File>
           </Files>
         </Group>

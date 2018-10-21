@@ -4,8 +4,9 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
-	
-char einlesen(void);
+		
+char zeichenEinlesen(void);
+int zifferHinzufuegen(int, char);
 
 #ifdef	__cplusplus
 }

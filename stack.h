@@ -1,9 +1,3 @@
-/* 
- * File:   keypad.h
- * Author: Alfred Lohmann
- *
- * Created: 26.03.2014
-*/
 #ifndef STACK_H
 #define	STACK_H
 
@@ -13,6 +7,13 @@ extern "C" {
 	
 void push(int i);
 int pop(void);
+void clearStack(void);
+int getAnzahlEintraege(void);
+int getObersterEintrag(void);
+int* getAlleEintraege(void);
+void vertauscheEintraege(void);
+void dupliziereOberstenEintrag(void);
+
 
 
 #ifdef	__cplusplus
