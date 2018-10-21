@@ -85,6 +85,11 @@ int getObersterEintrag(void)
 	{
 		return stack[stackpointer - 1];
 	}
+	else
+	{
+		fprintf(stderr, "%s\n", strerror(32));
+		return -1;
+	}
 	// todo: else
 }
 

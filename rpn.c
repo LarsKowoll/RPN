@@ -164,14 +164,20 @@ int mul(void)
 int div(void){
 	if (getAnzahlEintraege() >= 2) // zwei verschiedene if-Bedingungen, damit der Fehlerfall noch konkretisiert werden kann
 	{
-		if (getObersterEintrag() != 0)
-		{
 			int divisor = pop();
 			int dividend = pop();
+		if (divisor != 0)
+			{
 			int quotient = dividend / divisor;
 			push(quotient);
 			return 0;
-		}	
+			}
+		}
+		else
+		{
+			fprintf(stderr, "%s\n", strerror(34));
+			return -1;
+		}
 	}
-	return -1;
-}
+	
+
