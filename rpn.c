@@ -4,6 +4,8 @@
 #include "stack.h"
 #include "tft.h"
 
+//http://www.virtsync.com/c-error-codes-include-errno
+
 /* Funktionendeklarationen */
 int add(void);
 int sub(void);
