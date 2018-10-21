@@ -2,10 +2,12 @@
 #include <errno.h>
 #include "TI_Lib.h"
 #include "keypad.h"
+#include "tft.h"
 
 /* Funktionsdeklarationen */
 char zeichenEinlesen();
 int zifferHinzufuegen(int zahl, char eingabe);
+char *strerror(int error_nr);
 
 /**
   * @brief Liest Zeichen vom Touchpad ein.
@@ -27,7 +29,10 @@ int zifferHinzufuegen(int zahl, char eingabe) // eventuell über pop()
 	int tempZahl = zahl;
 	zahl = zahl * 10 + eingabeZahl; // hinzuzufuegende Ziffer wird an die Zahl rangehaengt
 	if (tempZahl > zahl){
+		
 		return -1;
+		fprintf(stderr, "%s\n", strerror(errno));
+		
 	}
 	else {	
 	return zahl;

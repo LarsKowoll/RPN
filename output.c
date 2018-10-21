@@ -6,6 +6,7 @@
 /* Funktionendeklarationen */
 void tftAusgabeZahl(int zahl);
 void tftAusgabeZahlen(int* zahlen, int anzahlZahlen);
+char *strerror(int error_nr);
 
 /**
   * @brief Ausgabe einer Zahl auf dem TFT-Bildschirm

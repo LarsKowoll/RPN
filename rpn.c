@@ -1,13 +1,15 @@
 #include <stdio.h>
-
+#include <errno.h>
 #include "TI_Lib.h"
 #include "stack.h"
+#include "tft.h"
 
 /* Funktionendeklarationen */
 int add(void);
 int sub(void);
 int mul(void);
 int div(void);
+char *strerror(int error_nr);
 
 /** @brief Nimmt zwei Werte vom Stack, addiert sie und legt
   *        das Ergebnis wieder auf dem Stack ab.
@@ -27,6 +29,7 @@ int add(void)
 */		
 			if (summand2 > 0 && summand1 > 0) {
 				if (summe < 0) {
+					fprintf(stderr, "%s\n", strerror(errno));
 					return -1;
 				}
 			}
@@ -35,6 +38,7 @@ int add(void)
 */					
 			if (summand2 < 0 && summand1 < 0) {
 				if (summe > 0) {
+					fprintf(stderr, "%s\n", strerror(errno));
 					return -1;
 				}
 			}
@@ -43,6 +47,7 @@ int add(void)
 	}
 	else
 	{
+		fprintf(stderr, "%s\n", strerror(errno));
 		return -1;
 	}
 }
