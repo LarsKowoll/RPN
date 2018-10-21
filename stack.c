@@ -3,8 +3,11 @@
 #include "TI_Lib.h"
 
 
+<<<<<<< HEAD
 #define MaxAnzahl 100
 
+=======
+>>>>>>> dcdc507d3a97b47713538f1499f79ce4b50eb97f
 /* Variablendeklarationen */
 int stackpointer = 0;
 int stack[MaxAnzahl];

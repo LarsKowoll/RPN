@@ -19,6 +19,7 @@ int add(void)
 {
   if (getAnzahlEintraege() >= 2)
 	{
+<<<<<<< HEAD
 		int summand2 = pop();
 		int summand1 = pop();
 		int summe = summand1+ summand2;
@@ -38,6 +39,9 @@ int add(void)
 					return -1;
 				}
 			}
+=======
+		int summe = pop() + pop();
+>>>>>>> dcdc507d3a97b47713538f1499f79ce4b50eb97f
 		push(summe);
 		return 0;
 	}
@@ -61,6 +65,7 @@ int sub(void)
 		int subtrahend = pop();
 		int minuend = pop();
 		int differenz = minuend - subtrahend;
+<<<<<<< HEAD
 
 /**
 * Prüfung auf Overflow, wenn eine postive Zahl von einer negativen Zahl subrtahiert wird kann das Ergebnis nicht negativ sein
@@ -78,6 +83,8 @@ int sub(void)
 					return -1;
 				}
 			}
+=======
+>>>>>>> dcdc507d3a97b47713538f1499f79ce4b50eb97f
 		push(differenz);
 		return 0;
 	}
@@ -98,6 +105,7 @@ int mul(void)
 {
 	if (getAnzahlEintraege() >= 2)
 	{
+<<<<<<< HEAD
 		int faktor2 = pop();
 		int faktor1 = pop();
 		int produkt = faktor1 * faktor2;
@@ -119,6 +127,9 @@ int mul(void)
 				}
 			}
 	
+=======
+		int produkt = pop() * pop();
+>>>>>>> dcdc507d3a97b47713538f1499f79ce4b50eb97f
 		push(produkt);
 		return 0;
 	}
