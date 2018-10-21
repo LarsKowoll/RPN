@@ -19,6 +19,7 @@ int getObersterEintrag(void);
 int* getAlleEintraege(void);
 void vertauscheEintraege(void);
 void dupliziereOberstenEintrag(void);
+char *strerror(int error_nr);
 
 /**
   * @brief Legt Wert auf den Stack.
@@ -31,6 +32,7 @@ void push(int i)
 	}
 	else
 	{
+		fprintf(stderr, "%s\n", strerror(12));
 		// TFT_puts("Stack ist voll");
 	}
 }
@@ -50,6 +52,7 @@ int pop(void)
 	else
 	{
 		// TFT_puts("Stack ist leer");
+		fprintf(stderr, "%s\n", strerror(32));
 		return 0;
 	}
 }

@@ -29,7 +29,7 @@ int add(void)
 */		
 			if (summand2 > 0 && summand1 > 0) {
 				if (summe < 0) {
-					fprintf(stderr, "%s\n", strerror(errno));
+					fprintf(stderr, "%s\n", strerror(34));
 					return -1;
 				}
 			}
@@ -38,7 +38,7 @@ int add(void)
 */					
 			if (summand2 < 0 && summand1 < 0) {
 				if (summe > 0) {
-					fprintf(stderr, "%s\n", strerror(errno));
+					fprintf(stderr, "%s\n", strerror(34));
 					return -1;
 				}
 			}
@@ -47,7 +47,7 @@ int add(void)
 	}
 	else
 	{
-		fprintf(stderr, "%s\n", strerror(errno));
+		fprintf(stderr, "%s\n", strerror(34));
 		return -1;
 	}
 }
@@ -72,6 +72,7 @@ int sub(void)
 */		
 		if (minuend > 0 && subtrahend < 0) {
 				if (differenz < 0) {
+					fprintf(stderr, "%s\n", strerror(34));
 					return -1;
 				}
 			}
@@ -80,6 +81,7 @@ int sub(void)
 */					
 			if (minuend < 0 && subtrahend > 0) {
 				if (differenz > 0) {
+					fprintf(stderr, "%s\n", strerror(34));
 					return -1;
 				}
 			}
@@ -108,29 +110,45 @@ int mul(void)
 		int produkt = faktor1 * faktor2;
 		
 		/**
-* Prüfung auf Overflow. Bei Multiplikation mit zwei negativen Zahlen oder zwei postiven Zahlen muss das Ergebnis positiv sein.
+* Prüfung auf Overflow. Bei Multiplikation mit zwei negativen Zahlen oder zwei postiven Zahlen muss das Ergebnis positiv sein. (Ausnahme 0)
 */		
 		if ((faktor1 > 0 && faktor2 > 0) || (faktor1 < 0 && faktor2 < 0)) {
 				if (produkt < 0) {
+					fprintf(stderr, "%s\n", strerror(34));
+					return -1;
+				}
+				else if (produkt > 0) {
+					if ((produkt < faktor1) || (produkt < faktor2)){ //Das Produkt muss größer sein, als die einzelene Faktoren (Ausnahme 0)
+					fprintf(stderr, "%s\n", strerror(34));
 					return -1;
 				}
 			}
+		}
 /**
 * Prüfung auf Overflow. Bei Multiplikation mit einer negativen und positiven Zahl muss das Ergbnis negativ sein.
 */					
 		if ((faktor1 < 0 && faktor2 > 0) || (faktor1 < 0 && faktor2 > 0)) {
 				if (produkt > 0) {
+					fprintf(stderr, "%s\n", strerror(errno));
+					return -1;
+				}
+				else if (produkt < 0) {
+					if ((produkt > faktor1) || (produkt > faktor2)){ //Das Produkt muss kleiner sein, als die einzelene Faktoren (Ausnahme 0)
+					fprintf(stderr, "%s\n", strerror(34));
 					return -1;
 				}
 			}
+		}
 		push(produkt);
 		return 0;
+		
 	}
 	else
 	{
 		return -1;
 	}
 }
+
 
 /**
   * @brief Nimmt zwei Werte vom Stack, teilt den zweiten Wert
@@ -141,8 +159,7 @@ int mul(void)
   *             versucht wurde, durch 0 zu teilen;
 	*         0 sonst.
   */
-int div(void)
-{
+int div(void){
 	if (getAnzahlEintraege() >= 2) // zwei verschiedene if-Bedingungen, damit der Fehlerfall noch konkretisiert werden kann
 	{
 		if (getObersterEintrag() != 0)
@@ -152,14 +169,7 @@ int div(void)
 			int quotient = dividend / divisor;
 			push(quotient);
 			return 0;
-		}
-		else
-		{
-			return -1;
-		}
+		}	
 	}
-	else
-	{
-		return -1;
-	}
+	return -1;
 }
