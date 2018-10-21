@@ -24,7 +24,6 @@ char zeichenEinlesen(){
 int zifferHinzufuegen(int zahl, char eingabe) // eventuell über pop()
 {
 	int eingabeZahl = eingabe - '0';
-<<<<<<< HEAD
 	int tempZahl = zahl;
 	zahl = zahl * 10 + eingabeZahl; // hinzuzufuegende Ziffer wird an die Zahl rangehaengt
 	if (tempZahl > zahl){
@@ -33,8 +32,4 @@ int zifferHinzufuegen(int zahl, char eingabe) // eventuell über pop()
 	else {	
 	return zahl;
 	}
-=======
-	zahl = zahl * 10 + eingabeZahl; // hinzuzufuegende Ziffer wird an die Zahl rangehaengt
-	return zahl;
->>>>>>> dcdc507d3a97b47713538f1499f79ce4b50eb97f
 }

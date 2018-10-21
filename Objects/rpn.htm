@@ -3,11 +3,7 @@
 <title>Static Call Graph - [.\Objects\rpn.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\rpn.axf</H1><HR>
-<<<<<<< HEAD
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Sun Oct 21 16:54:01 2018
-=======
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Sun Oct 21 00:52:52 2018
->>>>>>> dcdc507d3a97b47713538f1499f79ce4b50eb97f
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060422: Last Updated: Sun Oct 21 17:05:22 2018
 <BR><P>
 <H3>Maximum Stack Usage =        424 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -845,11 +841,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_exit
 </UL>
 
-<<<<<<< HEAD
 <P><STRONG><a name="[7e]"></a>add</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, rpn.o(i.add))
-=======
-<P><STRONG><a name="[7e]"></a>add</STRONG> (Thumb, 38 bytes, Stack size 16 bytes, rpn.o(i.add))
->>>>>>> dcdc507d3a97b47713538f1499f79ce4b50eb97f
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = add
 </UL>
 <BR>[Calls]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;push
@@ -942,7 +934,6 @@ Global Symbols
 <P><STRONG><a name="[4b]"></a>main</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 424 + Unknown Stack Size
 <LI>Call Chain = main &rArr; zeichenEinlesen &rArr; Get_Touch_Pad_Input &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
-<<<<<<< HEAD
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;zeichenEinlesen
 <LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;analysiereZeichen
@@ -1010,59 +1001,10 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tftAusgabeZahl
 <LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_putc
-=======
-</UL>
-<BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;zeichenEinlesen
-<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;analysiereZeichen
-<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_TI_Board
-<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Make_Touch_Pad
-</UL>
-<BR>[Called By]<UL><LI><a href="#[4a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
-</UL>
-
-<P><STRONG><a name="[85]"></a>mul</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, rpn.o(i.mul))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = mul
-</UL>
-<BR>[Calls]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;push
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pop
-<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getAnzahlEintraege
 </UL>
 <BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;analysiereZeichen
 </UL>
 
-<P><STRONG><a name="[80]"></a>pop</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, stack.o(i.pop))
-<BR><BR>[Called By]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vertauscheEintraege
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sub
-<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mul
-<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dupliziereOberstenEintrag
-<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;div
-<LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;clearStack
-<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;add
-<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;analysiereZeichen
-</UL>
-
-<P><STRONG><a name="[81]"></a>push</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, stack.o(i.push))
-<BR><BR>[Called By]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vertauscheEintraege
-<LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sub
-<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mul
-<LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dupliziereOberstenEintrag
-<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;div
-<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;add
-<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;analysiereZeichen
-</UL>
-
-<P><STRONG><a name="[84]"></a>sub</STRONG> (Thumb, 40 bytes, Stack size 16 bytes, rpn.o(i.sub))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = sub
-</UL>
-<BR>[Calls]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;push
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pop
-<LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getAnzahlEintraege
->>>>>>> dcdc507d3a97b47713538f1499f79ce4b50eb97f
-</UL>
-<BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;analysiereZeichen
-</UL>
-
-<<<<<<< HEAD
 <P><STRONG><a name="[8d]"></a>vertauscheEintraege</STRONG> (Thumb, 28 bytes, Stack size 12 bytes, stack.o(i.vertauscheEintraege))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = vertauscheEintraege
 </UL>
@@ -1085,49 +1027,6 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = zifferHinzufuegen
 </UL>
 <BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;analysiereZeichen
-=======
-<P><STRONG><a name="[88]"></a>tftAusgabeZahl</STRONG> (Thumb, 22 bytes, Stack size 24 bytes, output.o(i.tftAusgabeZahl))
-<BR><BR>[Stack]<UL><LI>Max Depth = 160 + Unknown Stack Size
-<LI>Call Chain = tftAusgabeZahl &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
-</UL>
-<BR>[Calls]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_puts
-<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
-</UL>
-<BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tftAusgabeZahlen
-<LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;analysiereZeichen
-</UL>
-
-<P><STRONG><a name="[8a]"></a>tftAusgabeZahlen</STRONG> (Thumb, 38 bytes, Stack size 24 bytes, output.o(i.tftAusgabeZahlen))
-<BR><BR>[Stack]<UL><LI>Max Depth = 184 + Unknown Stack Size
-<LI>Call Chain = tftAusgabeZahlen &rArr; tftAusgabeZahl &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
-</UL>
-<BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;tftAusgabeZahl
-<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFT_putc
-</UL>
-<BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;analysiereZeichen
-</UL>
-
-<P><STRONG><a name="[8d]"></a>vertauscheEintraege</STRONG> (Thumb, 28 bytes, Stack size 12 bytes, stack.o(i.vertauscheEintraege))
-<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = vertauscheEintraege
-</UL>
-<BR>[Calls]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;push
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pop
-</UL>
-<BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;analysiereZeichen
-</UL>
-
-<P><STRONG><a name="[8f]"></a>zeichenEinlesen</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, input.o(i.zeichenEinlesen))
-<BR><BR>[Stack]<UL><LI>Max Depth = 424 + Unknown Stack Size
-<LI>Call Chain = zeichenEinlesen &rArr; Get_Touch_Pad_Input &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
-</UL>
-<BR>[Calls]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_Touch_Pad_Input
-</UL>
-<BR>[Called By]<UL><LI><a href="#[4b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[83]"></a>zifferHinzufuegen</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, input.o(i.zifferHinzufuegen))
-<BR><BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;analysiereZeichen
->>>>>>> dcdc507d3a97b47713538f1499f79ce4b50eb97f
 </UL>
 <P>
 <H3>
