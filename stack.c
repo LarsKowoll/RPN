@@ -32,7 +32,7 @@ void push(int i)
 	}
 	else
 	{
-		fprintf(stderr, "%s\n", strerror(12));
+		fprintf(stderr, "%s\n", strerror(2));
 		// TFT_puts("Stack ist voll");
 	}
 }
@@ -52,7 +52,7 @@ int pop(void)
 	else
 	{
 		// TFT_puts("Stack ist leer");
-		fprintf(stderr, "%s\n", strerror(32));
+		fprintf(stderr, "%s\n", strerror(2));
 		return 0;
 	}
 }
@@ -84,6 +84,11 @@ int getObersterEintrag(void)
 	if (stackpointer > 0)
 	{
 		return stack[stackpointer - 1];
+	}
+	else
+	{
+		fprintf(stderr, "%s\n", strerror(32));
+		return -1;
 	}
 	// todo: else
 }

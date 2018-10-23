@@ -29,7 +29,7 @@ int zifferHinzufuegen(int zahl, char eingabe) // eventuell über pop()
 	int tempZahl = zahl;
 	zahl = zahl * 10 + eingabeZahl; // hinzuzufuegende Ziffer wird an die Zahl rangehaengt
 	if (tempZahl > zahl){
-		fprintf(stderr, "%s\n", strerror(22));
+		fprintf(stderr, "%s\n", strerror(1));
 		return -1;
 		
 	}

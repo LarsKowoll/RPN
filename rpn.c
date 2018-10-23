@@ -31,7 +31,7 @@ int add(void)
 */		
 			if (summand2 > 0 && summand1 > 0) {
 				if (summe < 0) {
-					fprintf(stderr, "%s\n", strerror(34));
+					fprintf(stderr, "%s\n", strerror(2));
 					return -1;
 				}
 			}
@@ -40,7 +40,7 @@ int add(void)
 */					
 			if (summand2 < 0 && summand1 < 0) {
 				if (summe > 0) {
-					fprintf(stderr, "%s\n", strerror(34));
+					fprintf(stderr, "%s\n", strerror(2));
 					return -1;
 				}
 			}
@@ -49,7 +49,7 @@ int add(void)
 	}
 	else
 	{
-		fprintf(stderr, "%s\n", strerror(34));
+		fprintf(stderr, "%s\n", strerror(2));
 		return -1;
 	}
 }
@@ -74,7 +74,7 @@ int sub(void)
 */		
 		if (minuend > 0 && subtrahend < 0) {
 				if (differenz < 0) {
-					fprintf(stderr, "%s\n", strerror(34));
+					fprintf(stderr, "%s\n", strerror(2));
 					return -1;
 				}
 			}
@@ -83,7 +83,7 @@ int sub(void)
 */					
 			if (minuend < 0 && subtrahend > 0) {
 				if (differenz > 0) {
-					fprintf(stderr, "%s\n", strerror(34));
+					fprintf(stderr, "%s\n", strerror(2));
 					return -1;
 				}
 			}
@@ -116,12 +116,12 @@ int mul(void)
 */		
 		if ((faktor1 > 0 && faktor2 > 0) || (faktor1 < 0 && faktor2 < 0)) {
 				if (produkt < 0) {
-					fprintf(stderr, "%s\n", strerror(34));
+					fprintf(stderr, "%s\n", strerror(2));
 					return -1;
 				}
 				else if (produkt > 0) {
 					if ((produkt < faktor1) || (produkt < faktor2)){ //Das Produkt muss größer sein, als die einzelene Faktoren (Ausnahme 0)
-					fprintf(stderr, "%s\n", strerror(34));
+					fprintf(stderr, "%s\n", strerror(2));
 					return -1;
 				}
 			}
@@ -131,12 +131,12 @@ int mul(void)
 */					
 		if ((faktor1 < 0 && faktor2 > 0) || (faktor1 < 0 && faktor2 > 0)) {
 				if (produkt > 0) {
-					fprintf(stderr, "%s\n", strerror(errno));
+					fprintf(stderr, "%s\n", strerror(2));
 					return -1;
 				}
 				else if (produkt < 0) {
 					if ((produkt > faktor1) || (produkt > faktor2)){ //Das Produkt muss kleiner sein, als die einzelene Faktoren (Ausnahme 0)
-					fprintf(stderr, "%s\n", strerror(34));
+					fprintf(stderr, "%s\n", strerror(2));
 					return -1;
 				}
 			}
@@ -164,14 +164,20 @@ int mul(void)
 int div(void){
 	if (getAnzahlEintraege() >= 2) // zwei verschiedene if-Bedingungen, damit der Fehlerfall noch konkretisiert werden kann
 	{
-		if (getObersterEintrag() != 0)
-		{
 			int divisor = pop();
 			int dividend = pop();
+		if (divisor != 0)
+			{
 			int quotient = dividend / divisor;
 			push(quotient);
 			return 0;
-		}	
+			}
+		}
+		else
+		{
+			fprintf(stderr, "%s\n", strerror(2));
+			return -1;
+		}
 	}
-	return -1;
-}
+	
+
